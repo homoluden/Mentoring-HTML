@@ -35,6 +35,7 @@ header, footer, hgroup,
 nav, section {
     display: block;
 }
+.nav, .pagination, .carousel a { cursor: pointer; }
 
 mark {
     background-color: #a6dbed;

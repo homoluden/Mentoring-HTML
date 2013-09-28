@@ -30,7 +30,8 @@ namespace HTMLProxy
                         "~/Scripts/angular-cookies.js",
                         "~/Scripts/angular-loader.js",
                         "~/Scripts/angular-resource.js",
-                        "~/Scripts/ui-bootstrap-0.6.0.js"));
+                        "~/Scripts/ui-bootstrap-0.6.0.js",
+                        "~/Scripts/ui-bootstrap-tpls-0.6.0.js"));
             bundles.Add(new ScriptBundle("~/bundles/ng-app").Include(
                         "~/Scripts/ng-app/app.js",
                         "~/Scripts/ng-app/IndexCtrl.js"));

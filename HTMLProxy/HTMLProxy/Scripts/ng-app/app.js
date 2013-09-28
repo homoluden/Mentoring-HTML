@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-angular.module('mentApp', ['mentApp.controllers']).
+angular.module('mentApp', ['ui.bootstrap', 'mentApp.controllers']).
   config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/', { templateUrl: '/Content/partials/index.html', controller: 'IndexCtrl' });
       $routeProvider.when('/proxy', { templateUrl: '/Content/partials/proxy.html', controller: 'ProxyCtrl' });
