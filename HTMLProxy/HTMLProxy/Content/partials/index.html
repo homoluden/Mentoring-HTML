@@ -2,18 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link href="../bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="../bootstrap/bootstrap-theme.css" rel="stylesheet" />
-    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="/Content/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
 
     <section class="container">
         <style>
+            hr {
+                border-color: #777;
+            }
+
             .btn-link {
                 font-family: tahoma,arial,verdana,sans-serif,Lucida Sans;
                 font-size: 11px;
                 padding: 16px 8px;
+            }
+
+            #search-box {
+                padding-left: 0px;
             }
 
             #search-box button {
@@ -21,7 +27,7 @@
             }
 
             #search-box .form-group {
-                width: 125px;
+                width: 150px;
             }
 
                 #search-box .form-group input {
@@ -45,28 +51,35 @@
             </div>
             <div class="col-md-7">
                 <p class="pull-right">
-                    <button type="button" class="btn btn-lg btn-link">люди</button>
-                    <button type="button" class="btn btn-lg btn-link">сообщества</button>
-                    <button type="button" class="btn btn-lg btn-link">игры</button>
-                    <button type="button" class="btn btn-lg btn-link">музыка</button>
-                    <button type="button" class="btn btn-lg btn-link"><span class="glyphicon glyphicon-play"></span></button>
-                    <button type="button" class="btn btn-lg btn-link">помощь</button>
-                    <button type="button" class="btn btn-lg btn-link">выйти</button>
+                    <button data-ng-repeat="link in topLinks" type="button" class="btn btn-lg btn-link">
+                        <span data-ng-show="link.showText">{{link.title}}</span>
+                        <span data-ng-show="link.showIcon" class="{{link.iconClass}}"></span>
+                    </button>
                 </p>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3">
-                <div class="alert alert-success">
-                    <strong>Well done!</strong> You successfully read this important alert message.
+            <aside class="col-md-2">
+                <button data-ng-repeat="link in sideLinks" type="button" class="btn btn-lg btn-link">
+                    <span data-ng-show="link.showText">{{link.title}}</span>
+                    <span data-ng-show="link.showIcon" class="{{link.iconClass}}"></span>
+                </button>
+                <hr />
+                <button type="button" class="btn btn-lg btn-link">
+                    <span>Документы</span>
+                </button>
+                <div class="row" data-ng-repeat="ad in ads">
+                    <!--AD CONTENT GOES HERE-->
                 </div>
-            </div>
-            <div class="col-md-9">
+            </aside>
+            <div class="col-md-10">
 
 
                 <div data-ng-controller="TabsCtrl">
                     <tabset>
-                        <tab heading="Общее">Static content</tab>
+                        <tab heading="Общее">
+
+                        </tab>
                         <tab data-ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
                           {{tab.content}}
                         </tab>
