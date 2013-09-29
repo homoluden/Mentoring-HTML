@@ -31,15 +31,16 @@
 }
 
 .btn-default {
-  text-shadow: 0 1px 0 #fff;
-  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(top, #ffffff, 0%, #e6e6e6, 100%);
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #e6e6e6 100%);
-  background-image: linear-gradient(to bottom, #ffffff 0%, #e6e6e6 100%);
+  color: #fafafa;
+  text-shadow: 0 1px 0 #111;
+  background-image: -webkit-gradient(linear, left 0%, left 100%, from(#6A8DB2), to(#52789F));
+  background-image: -webkit-linear-gradient(top, #6A8DB2, 0%, #52789F, 100%);
+  background-image: -moz-linear-gradient(top, #6A8DB2 0%, #52789F 100%);
+  background-image: linear-gradient(to bottom, #6A8DB2 0%, #52789F 100%);
   background-repeat: repeat-x;
   border-color: #e0e0e0;
   border-color: #ccc;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A8DB2', endColorstr='#ff52789F', GradientType=0);
 }
 
 .btn-default:active,
