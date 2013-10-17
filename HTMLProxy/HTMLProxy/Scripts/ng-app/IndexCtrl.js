@@ -46,7 +46,7 @@ var ProxyCtrl = function ($scope, $location) {
     $scope.loadThruProxy = function () {
         var url = encodeURIComponent($scope.url);
         
-        var absUrl = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/proxy/' + url;
+        var absUrl = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/proxy?url=' + url;
         //$location.url(absUrl);
         document.location.href = absUrl;
         //$scope.$apply();
