@@ -24,7 +24,6 @@ var IndexCtrl = function($scope, $http) {
         { title: "Мои Закладки", href: "/#", showIcon: false, showText: true },
         { title: "Мои Настройки", href: "/#", showIcon: false, showText: true }
     ];
-
 }
 
 var TabsCtrl = function ($scope) {
@@ -36,15 +35,25 @@ var TabsCtrl = function ($scope) {
     { title: "Баланс", content: "Содержимое вкладки Баланс" },
     ];
 
-    //$scope.alertMe = function () {
-    //    setTimeout(function () {
-    //        alert("You've selected the alert tab!");
-    //    });
-    //};
-
     $scope.navType = 'pills';
+
+}
+
+var ProxyCtrl = function ($scope, $location) {
+    
+    $scope.url = '';
+
+    $scope.loadThruProxy = function () {
+        var url = encodeURIComponent($scope.url);
+        
+        var absUrl = $location.protocol() + '://' + $location.host() + ':' + $location.port() + '/proxy/' + url;
+        //$location.url(absUrl);
+        document.location.href = absUrl;
+        //$scope.$apply();
+    };
 }
 
 angular.module('mentApp.controllers', [])
     .controller('IndexCtrl', ['$scope', '$http', IndexCtrl])
-    .controller('TabsCtrl', ['$scope', TabsCtrl]);
+    .controller('TabsCtrl', ['$scope', TabsCtrl])
+    .controller('ProxyCtrl', ['$scope', '$location', ProxyCtrl]);

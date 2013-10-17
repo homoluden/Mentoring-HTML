@@ -298,6 +298,12 @@
                                 </div>
                             </div>
                         </tab>
+                        <tab heading="Proxy">
+                            <div class="row" ng-controller="ProxyCtrl">
+                                <div class="col-sm-10"><input type="text" id="url" placeholder="Input URL here" ng-model="url"/></div>
+                                <div class="col-sm-2"><button type="submit" ng-click="loadThruProxy()">Load</button></div>
+                            </div>
+                        </tab>
                         <tab data-ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
                           {{tab.content}}
                         </tab>
